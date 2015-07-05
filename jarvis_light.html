@@ -1,0 +1,17 @@
+<head>
+  <title>jarvis_light</title>
+</head>
+
+<body>
+  <h1>Welcome to Jarvis Light!</h1>
+
+  {{> loginButtons}}
+
+  {{#if loggedIn}}
+    {{> light_ui}}
+  {{/if}}
+</body>
+
+<template name="light_ui">
+  <button class="light_switch">Click Me</button>
+</template>
