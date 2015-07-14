@@ -6,16 +6,40 @@ Template.light_ui.helpers({
 });
 
 Template.register.events({
-  "click #register-submit": function(event) {
+  "submit .registerForm": function(event) {
     event.preventDefault();
-    console.log("register submitted");
+    const regEmail = event.target.registerEmail.value 
+    const regPassword = event.target.registerPassword.value
+    if (regEmail && regPassword) {
+      Accounts.createUser({
+        email: regEmail,
+        password: regPassword 
+      }, function(err) {
+        console.log(err);
+      });
+    } else {
+      //LOL TODO
+      alert('you suck!');
+    }
   }
 });
 
 Template.login.events({
-  "click #login-submit": function(event) {
+  "submit .loginForm": function(event) {
     event.preventDefault(); 
-    console.log("login clicked");
+    const email = event.target.loginEmail.value
+    const password = event.target.loginPassword.value
+    Meteor.loginWithPassword(email, password, function(err) {
+      //TODO error for User not found or incorrect password. 
+      console.log("error" + err);
+    });
+  }
+});
+
+Template.logout.events({
+  "click .logout": function(event) {
+    event.preventDefault();
+    console.log("logout clicked");
   }
 });
 

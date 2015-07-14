@@ -9,6 +9,7 @@
 
   {{#if loggedIn}}
     {{> light_ui}}
+    {{> logout}}
   {{else}}
     {{> login}}
     {{> register}}
@@ -20,7 +21,7 @@
 </template>
 
 <template name="register">
-  <form>
+  <form class="registerForm">
     <input type="email" name="registerEmail" />
     <input type="password" name="registerPassword" />
     <input id="register-submit" type="submit" value="Register" />
@@ -28,9 +29,13 @@
 </template>
 
 <template name="login">
-  <form>
+  <form class="loginForm">
     <input type="email" name="loginEmail" />
     <input type="password" name="loginPassword" />
     <input id="login-submit" type="submit" value="Login" />
   </form>
+</template>
+
+<template name="logout">
+  <a href="#" class="logout">Logout</a>
 </template>
