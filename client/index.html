@@ -1,0 +1,36 @@
+<head>
+  <title>jarvis_light</title>
+</head>
+
+<body>
+  <h1>Welcome to Jarvis Light!</h1>
+
+  {{> loginButtons}}
+
+  {{#if loggedIn}}
+    {{> light_ui}}
+  {{else}}
+    {{> login}}
+    {{> register}}
+  {{/if}}
+</body>
+
+<template name="light_ui">
+  <button class="light_switch">Click Me</button>
+</template>
+
+<template name="register">
+  <form>
+    <input type="email" name="registerEmail" />
+    <input type="password" name="registerPassword" />
+    <input id="register-submit" type="submit" value="Register" />
+  </form>
+</template>
+
+<template name="login">
+  <form>
+    <input type="email" name="loginEmail" />
+    <input type="password" name="loginPassword" />
+    <input id="login-submit" type="submit" value="Login" />
+  </form>
+</template>
