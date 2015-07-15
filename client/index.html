@@ -1,19 +1,23 @@
 <head>
   <title>jarvis_light</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
-  <h1>Welcome to Jarvis Light!</h1>
-
-  {{> loginButtons}}
-
   {{#if loggedIn}}
-    {{> light_ui}}
-    {{> logout}}
-  {{else}}
-    {{> login}}
-    {{> register}}
+    {{> navbar}}
   {{/if}}
+  <div class="container">
+    <h1 class="site-header">Jarvis Light!</h1>
+
+    <!--{{> loginButtons}}-->
+
+    {{#if loggedIn}}
+      {{> light_ui}}
+    {{else}}
+      {{> loginBox}}
+    {{/if}}
+  </div>
 </body>
 
 <template name="light_ui">
@@ -21,19 +25,36 @@
 </template>
 
 <template name="register">
-  <form class="registerForm">
-    <input type="email" name="registerEmail" />
-    <input type="password" name="registerPassword" />
+  <form class="register-form">
+    <input class="login-field" type="email" name="registerEmail" />
+    <input class="login-field" type="password" name="registerPassword" />
     <input id="register-submit" type="submit" value="Register" />
   </form>
 </template>
 
 <template name="login">
-  <form class="loginForm">
-    <input type="email" name="loginEmail" />
-    <input type="password" name="loginPassword" />
+  <form class="login-form">
+    <input class="login-field" type="email" name="loginEmail" placeholder="Email" />
+    <input class="login-field" type="password" name="loginPassword" placeholder="Password" />
     <input id="login-submit" type="submit" value="Login" />
   </form>
+</template>
+
+<template name="navbar">
+  <div class="navbar navbar-fixed-top navbar-inverse">
+      {{> logout}}
+  </div>
+</template>
+
+<template name="loginBox">
+  <div class="login-area">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 login-box">
+      {{> login}}
+      {{> register}}
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="logout">

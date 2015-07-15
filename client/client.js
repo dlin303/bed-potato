@@ -6,7 +6,7 @@ Template.light_ui.helpers({
 });
 
 Template.register.events({
-  "submit .registerForm": function(event) {
+  "submit .register-form": function(event) {
     event.preventDefault();
     const regEmail = event.target.registerEmail.value 
     const regPassword = event.target.registerPassword.value
@@ -25,7 +25,7 @@ Template.register.events({
 });
 
 Template.login.events({
-  "submit .loginForm": function(event) {
+  "submit .login-form": function(event) {
     event.preventDefault(); 
     const email = event.target.loginEmail.value
     const password = event.target.loginPassword.value
@@ -39,7 +39,7 @@ Template.login.events({
 Template.logout.events({
   "click .logout": function(event) {
     event.preventDefault();
-    console.log("logout clicked");
+    Meteor.logout();
   }
 });
 

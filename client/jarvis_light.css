@@ -1,1 +1,37 @@
 /* CSS declarations go here */
+body {
+  padding-top: 40px;
+}
+
+.site-header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login-submit, #register-submit {
+  width: 100%;
+  text-align: center;
+}
+
+input.login-field {
+  width: 100%;
+}
+
+form.login-form, form.register-form {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.login-box {
+  border-style: solid;
+  border-width: 1px;
+}
+
+a.logout {
+  text-color: white;
+  float: right;
+  padding-right: 20px;
+  text-decoration: none;
+}
