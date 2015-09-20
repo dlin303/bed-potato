@@ -17,6 +17,8 @@ Template.register.events({
       }, function(err) {
         console.log(err);
       });
+
+    Meteor.call("createParticleInfo");
     } else {
       //LOL TODO
       alert('you suck!');
