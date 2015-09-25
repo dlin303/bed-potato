@@ -8,3 +8,5 @@ meteor-platform
 accounts-ui
 accounts-password
 mizzao:bootstrap-3
+fourseven:scss
+reywood:bootstrap3-sass
